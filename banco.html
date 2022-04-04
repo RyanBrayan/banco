@@ -169,14 +169,18 @@
             }else{
                 while(true){
                     inf_senha = parseInt(prompt('Informe novamente a senha'))
-                    i++
-                    if(i === 3){
-                        break
+                    if(inf_senha == senha){
+                        alert('Ok, operação autorizada.')
+                        senha_informada = true
+                        return senha_informada
                     }
-                }
-                alert('Operação não autorizada.')
-                return false
-                inicio()
+                    i++
+                    if(i == 3){
+                        alert('Operação não autorizada.')
+                        inicio()
+                        break
+            }
+        }
             }
         }
         function erro() {
@@ -190,7 +194,6 @@
                 alert(`${nome}, Foi um prazer ter você aqui `)
                 window.close();
             } else {
-                
                 inicio();
             }
         }
